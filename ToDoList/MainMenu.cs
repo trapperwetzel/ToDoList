@@ -13,32 +13,31 @@ namespace ToDoList
         public static void Menu()
         {
             var name = Helpers.getName();
-            Console.WriteLine("Would you like to add to your list?");
+            Helpers.SeeList();
+            Console.WriteLine("Enter 'a' to add to your list");
+            Console.WriteLine();
             var input = Console.ReadLine();
-            if (input == "yes")
+            if (input.Trim().ToLower() == "a")
             {
+                Console.Clear();
                 Helpers.AddToList();
             }
 
+            // Add user list to a text file
+            Helpers.AddToFile();
 
-            Console.WriteLine("Would you like to see your list?");
-            var input1 = Console.ReadLine();
-            if(input1 == "yes")
-            {
-                Console.Clear();
-                Console.WriteLine("Here is your list: \n");
-                Helpers.printUserToDoList();
-            }
+            // Ask user if they want to see List
+            Helpers.SeeList();
 
-            
         }
 
-       
-
-
-
-
         
+
+
+
+
+
+
 
     }
 }
