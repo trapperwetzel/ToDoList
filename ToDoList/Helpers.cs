@@ -16,7 +16,7 @@ namespace ToDoList
             Console.WriteLine("Enter name: ");
             var name = Console.ReadLine();
             Console.Clear();
-            Console.WriteLine("\n");
+            
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"Hello {name} and welcome back to your To-Do-List");
             Console.WriteLine("----------------------------------------------------");
@@ -28,6 +28,8 @@ namespace ToDoList
         // Add users entry to the todolist.
         internal static void AddToList()
         {
+
+            
             Console.WriteLine("Enter new entry to your list: ");
             Console.WriteLine("Enter the word: 'quit' to quit");
             var entry = Console.ReadLine();
@@ -41,18 +43,15 @@ namespace ToDoList
                 { 
                     userToDoList.Add(entry); 
                 }
-                
-
+     
             }
-            
         }
-
-
-        internal static void AddToFile()
+        internal static void AddPreviousList()
         {
-            
-            File.WriteAllText("C:\\Users\\THINKPADENJOYER420\\Desktop\\Projects\\ToDoList\\ToDoList\\userList.txt", printUserToDoList());
+            var previousToDoList = Helpers.GetUserToDoListFromFile();
+            userToDoList.Add(previousToDoList);
         }
+
 
         internal static string GetUserToDoListFromFile()
         {
@@ -60,22 +59,25 @@ namespace ToDoList
             string message = "";
             foreach(string line in result)
             {
-                message += line;
                 message += "\n";
+                message += $"{line}";
+                
+                
+                
             }
             return message;
         }
+
         internal static void SeeList()
         {
-            Console.WriteLine("Would you like to see your list?");
-            Console.WriteLine("\n");
             Console.WriteLine("Enter 'y' to see list  ");
             var input1 = Console.ReadLine();
             if (input1.Trim().ToLower() == "y")
             {
                 Console.Clear();
-                Console.WriteLine("Here is your list: \n");
-                Console.WriteLine(Helpers.GetUserToDoListFromFile());
+                Console.WriteLine("Here is your list: ");
+                Console.WriteLine("------------------------------------------");
+                Console.WriteLine(Helpers.GetUserToDoListFromFile().Trim());
                 Console.WriteLine("------------------------------------------");
                 Console.WriteLine();
             }
@@ -86,19 +88,19 @@ namespace ToDoList
             }
         }
 
-
-        internal static void RemoveFromList()
+        internal static void AddToFile()
         {
 
+            File.WriteAllText("C:\\Users\\THINKPADENJOYER420\\Desktop\\Projects\\ToDoList\\ToDoList\\userList.txt", printUserToDoList());
         }
-
+       
 
         internal static string printUserToDoList()
         {
             string message = "";
             foreach(string item in userToDoList)
             {
-                message += ($"- {item}");
+                message += ($"{item}");
                 message += "\n";
 
                 

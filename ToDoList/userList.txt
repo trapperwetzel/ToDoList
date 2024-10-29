@@ -1,3 +1,7 @@
-- Data Structures Study
-- Pre-Calc
-- Tech Comm
+
+
+Data Structures HW
+Pre-Calc
+TechComm
+Clothes in washer
+Make Coffee
