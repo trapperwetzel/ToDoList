@@ -28,11 +28,12 @@ namespace ToDoList
         {
             var result = File.ReadAllLines("C:\\Users\\THINKPADENJOYER420\\Desktop\\Projects\\ToDoList\\ToDoList\\userList.txt");
             string message = "";
+            
             foreach (string line in result)
             {
                 message += "\n";
                 message += $"{line}";
-
+                
 
 
             }

@@ -1,4 +1,2 @@
-
-Study Pre-Calc
-Study Data Structures "Files"
-Journal
+Data Structures HW
+Pre-Calc HW
