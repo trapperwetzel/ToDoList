@@ -1,7 +1,4 @@
 
-
-Data Structures HW
-Pre-Calc
-TechComm
-Clothes in washer
-Make Coffee
+Study Pre-Calc
+Study Data Structures "Files"
+Journal
