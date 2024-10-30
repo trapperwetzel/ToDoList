@@ -73,7 +73,10 @@ namespace ToDoList
                         break;
 
                     case "e":
-                        Console.WriteLine("Thank you for using this To Do List");
+                        Console.Clear();
+                        Console.WriteLine("-------------------");
+                        Console.WriteLine("Thank you!");
+                        Console.WriteLine("-------------------");
                         isAppOn = false;
                         Environment.Exit(1);
                         break;
@@ -86,12 +89,7 @@ namespace ToDoList
 
 
 
-                Console.WriteLine("Would you like to see your finished list? ");
-                var useryesorno = Console.ReadLine();
-                if (useryesorno.Trim().ToLower() == "yes")
-                {
-                    user.SeeList();
-                }
+                
             }
 
             while (isAppOn);
